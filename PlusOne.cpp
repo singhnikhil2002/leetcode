@@ -77,3 +77,32 @@ public:
         return digits;
     }
 };*/
+
+// Isme do loop aise chalega ki do if conditions h
+
+// Humse isme bas last digit m ek number add krna h toh uske liye pehle hum last digit m add krenge, wo chiz Conditn 1 of If(i==n-1) se check hoga
+// Uske baad baad agar 0-8 tk ki koi bhi value hogi toh wo bs +1krke loop khtm kr dega age nahi badhega
+// Lekin agar waha 9 hua toh phir dusri Condtn 2 of If(arr[i]==10), kyuki 9+1=10 hoga last array element
+// Uske baad sbse pehle jaha pr 10 hua h us index ko zero se initalize kr dena h arr[i]=0;
+// phir ek inner If(i!=0) se chek hoga ki kahi index elemnt zero toh nahi , agar nhi toh phir arr[i-1]++; prev index ke element ko badha denge;
+// Agar condtn fail hoti h tb else m ek zero array m add kr denge aur first index ke element ko 1 se replace kr denge.
+
+
+// Better Soltn
+// class Solution {
+// public:
+//     vector<int> plusOne(vector<int>& digits) {
+//         int n = digits.size();
+
+//         for(int i=n-1;i>=0;i--){
+//             digits[i]++;
+
+//             if(digits[i]<10){
+//                 return digits;
+//             }
+//             digits[i]=0;
+//         }
+//         digits.insert(digits.begin(),1);
+//         return digits;
+//     }
+// };
